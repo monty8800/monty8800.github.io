@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Android," />
+  <meta name="keywords" content="Android,Python,持续集成," />
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="编程网站   网站名称 地址 说明     极客导航 http://www.jikedaohang.com/ sdf   Monty吴Blog http://blog.montywu.com/ ss">
-<meta name="keywords" content="Android">
+<meta name="description" content="Python刚入门，都是一些基础用法。  实现的功能包括，从git更新代码-&amp;gt;修改apk名称-&amp;gt;上传到蒲公英-&amp;gt;获取蒲公英返回的二维码地址  下面代码中需要蒲公英的uKey和api_key,需要去蒲公英的文档中获取(https://www.pgyer.com/doc/api#uploadApp)1234567891011121314151617181920212223242526">
+<meta name="keywords" content="Android,Python,持续集成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="导航">
-<meta property="og:url" content="http://blog.montywu.com/2018/03/07/navigation/index.html">
+<meta property="og:title" content="使用Python进行Android自动化打包发布">
+<meta property="og:url" content="http://blog.montywu.com/2018/03/07/使用Python进行Android自动化打包发布/index.html">
 <meta property="og:site_name" content="Monty吴">
-<meta property="og:description" content="编程网站   网站名称 地址 说明     极客导航 http://www.jikedaohang.com/ sdf   Monty吴Blog http://blog.montywu.com/ ss">
+<meta property="og:description" content="Python刚入门，都是一些基础用法。  实现的功能包括，从git更新代码-&amp;gt;修改apk名称-&amp;gt;上传到蒲公英-&amp;gt;获取蒲公英返回的二维码地址  下面代码中需要蒲公英的uKey和api_key,需要去蒲公英的文档中获取(https://www.pgyer.com/doc/api#uploadApp)1234567891011121314151617181920212223242526">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-07T07:31:05.596Z">
+<meta property="og:image" content="http://img.blog.csdn.net/20171106084959732?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTUxMTkyMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-03-07T07:36:56.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="导航">
-<meta name="twitter:description" content="编程网站   网站名称 地址 说明     极客导航 http://www.jikedaohang.com/ sdf   Monty吴Blog http://blog.montywu.com/ ss">
+<meta name="twitter:title" content="使用Python进行Android自动化打包发布">
+<meta name="twitter:description" content="Python刚入门，都是一些基础用法。  实现的功能包括，从git更新代码-&amp;gt;修改apk名称-&amp;gt;上传到蒲公英-&amp;gt;获取蒲公英返回的二维码地址  下面代码中需要蒲公英的uKey和api_key,需要去蒲公英的文档中获取(https://www.pgyer.com/doc/api#uploadApp)1234567891011121314151617181920212223242526">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20171106084959732?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTUxMTkyMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.montywu.com/2018/03/07/navigation/"/>
+  <link rel="canonical" href="http://blog.montywu.com/2018/03/07/使用Python进行Android自动化打包发布/"/>
 
 
 
 
 
-  <title>导航 | Monty吴</title>
+  <title>使用Python进行Android自动化打包发布 | Monty吴</title>
   
 
 
@@ -263,7 +265,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.montywu.com/2018/03/07/navigation/">
+    <link itemprop="mainEntityOfPage" href="http://blog.montywu.com/2018/03/07/使用Python进行Android自动化打包发布/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Monty吴">
@@ -280,7 +282,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">导航</h1>
+          <h1 class="post-title" itemprop="name headline">使用Python进行Android自动化打包发布</h1>
         
 
         <div class="post-meta">
@@ -292,7 +294,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T09:58:29+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T15:35:34+08:00">
                 2018-03-07
               </time>
             
@@ -317,6 +319,17 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Android/" itemprop="url" rel="index">
                     <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
                   </a>
                 </span>
 
@@ -352,27 +365,15 @@
       
 
       
-        <h2 id="编程网站"><a href="#编程网站" class="headerlink" title="编程网站"></a>编程网站</h2><table>
-<thead>
-<tr>
-<th>网站名称</th>
-<th>地址</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>极客导航</td>
-<td><a href="http://www.jikedaohang.com/" target="_blank" rel="noopener">http://www.jikedaohang.com/</a></td>
-<td>sdf</td>
-</tr>
-<tr>
-<td>Monty吴Blog</td>
-<td><a href="http://blog.montywu.com/">http://blog.montywu.com/</a></td>
-<td>ss</td>
-</tr>
-</tbody>
-</table>
+        <p>Python刚入门，都是一些基础用法。</p>
+<blockquote>
+<p>实现的功能包括，从git更新代码-&gt;修改apk名称-&gt;上传到蒲公英-&gt;获取蒲公英返回的二维码地址</p>
+</blockquote>
+<p>下面代码中需要蒲公英的uKey和api_key,需要去蒲公英的文档中获取(<a href="https://www.pgyer.com/doc/api#uploadApp" target="_blank" rel="noopener">https://www.pgyer.com/doc/api#uploadApp</a>)<br><img src="http://img.blog.csdn.net/20171106084959732?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMTUxMTkyMQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"># coding:utf-8</span><br><span class="line">import os, sys, time, json</span><br><span class="line"></span><br><span class="line"># os.system(&quot;sh buildApk.sh&quot;)</span><br><span class="line"></span><br><span class="line">apkdir = os.getcwd() + &quot;/build/outputs/apk/&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def gitpull():</span><br><span class="line">    print &quot;**************开始更新代码**************&quot;</span><br><span class="line">    log = os.system(&quot;git pull&quot;)</span><br><span class="line">    print log</span><br><span class="line">    print &quot;**************代码更新完成**************&quot;</span><br><span class="line">    # log = os.system(&quot;git log&quot;)</span><br><span class="line">    # print log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def uploadApk(file):</span><br><span class="line">    print &quot;**************开始上传APK**************&quot;</span><br><span class="line">    uKey = &quot;your uKey&quot; #在这里填入蒲公英平台上的uKey</span><br><span class="line">    _api_key = &quot;your api_key&quot; #在这里填入蒲公英平台上的api_key</span><br><span class="line">    upload_cmd = &quot;curl -F \&quot;file=@&quot; + file + &quot;\&quot; -F \&quot;uKey=&quot; + uKey + &quot;\&quot; -F \&quot;_api_key=&quot; + _api_key + &quot;\&quot; https://qiniu-storage.pgyer.com/apiv1/app/upload&quot;</span><br><span class="line">    print upload_cmd</span><br><span class="line">    content = os.popen(upload_cmd).read()</span><br><span class="line">    print &quot;上传返回结果 -&gt; &quot; + content</span><br><span class="line">    print &quot;**************上传完成**************&quot;</span><br><span class="line">    return content</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def rename():</span><br><span class="line">    currentTime = time.strftime(&quot;%Y%m%d%H%M%S&quot;, time.localtime())</span><br><span class="line">    appname = &quot;mes_debug_&quot; + currentTime + &quot;.apk&quot;</span><br><span class="line">    os.chdir(apkdir)</span><br><span class="line">    os.system(&quot;ls&quot;)</span><br><span class="line">    os.rename(&quot;app-debug.apk&quot;, appname)</span><br><span class="line">    return appname</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def build():</span><br><span class="line">    print &quot;**************开始构建APK**************&quot;</span><br><span class="line">    currentTime = time.strftime(&quot;%Y%m%d%H%M%S&quot;, time.localtime())</span><br><span class="line">    print &quot;当前时间:&quot; + currentTime</span><br><span class="line"></span><br><span class="line">    os.system(&quot;gradle clean build&quot;)</span><br><span class="line">    appname = rename()</span><br><span class="line">    print &quot;**************APK打包完成**************&quot;</span><br><span class="line">    upload_result = uploadApk(apkdir + appname)</span><br><span class="line"></span><br><span class="line">    res = json.loads(upload_result.replace(&quot;\n&quot;, &quot;&quot;))</span><br><span class="line">    appQRCodeURL = str(res[&apos;data&apos;][&apos;appQRCodeURL&apos;])</span><br><span class="line"></span><br><span class="line">    print &quot;**************二维码地址 —&gt; &quot; + appQRCodeURL</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def startBuildApk():</span><br><span class="line">    gitpull()</span><br><span class="line">    build()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">startBuildApk()</span><br></pre></td></tr></table></figure></p>
+<p>有了自动打包脚本，下一步就可以集成到Jenkins上了。</p>
+<blockquote>
+<p>参考：<br><a href="http://www.jianshu.com/p/b66d72862517" target="_blank" rel="noopener">http://www.jianshu.com/p/b66d72862517</a></p>
+</blockquote>
 
       
     </div>
@@ -392,6 +393,10 @@
           
             <a href="/tags/Android/" rel="tag"># Android</a>
           
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/持续集成/" rel="tag"># 持续集成</a>
+          
         </div>
       
 
@@ -403,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/06/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2018/03/07/navigation/" rel="next" title="导航">
+                <i class="fa fa-chevron-left"></i> 导航
               </a>
             
           </div>
@@ -412,10 +417,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/07/使用Python进行Android自动化打包发布/" rel="prev" title="使用Python进行Android自动化打包发布">
-                使用Python进行Android自动化打包发布 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -472,17 +473,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -576,22 +568,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编程网站"><span class="nav-number">1.</span> <span class="nav-text">编程网站</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
