@@ -78,7 +78,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android,Gradle," />
 
 
 
@@ -89,16 +89,18 @@
 
 
 
-<meta name="description" content="生活不止眼前苟且，还有诗和远方">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Monty吴">
-<meta property="og:url" content="http://montywu.me/categories/Android/index.html">
+<meta name="description" content="Gradle 3.4 引入了新的 Java 库插件配置，允许您控制到编译和运行时类路径的发布（适用于模块间依赖项）。 Android 插件 3.0.0 正在迁移到这些新依赖项配置。 要迁移您的项目，只需更新您的依赖项以使用新配置，而非已弃用配置，如下表中所列。     新配置 已弃用配置 行为     implementation compile 依赖项在编译时对模块可用，并且仅在运行时对模块的">
+<meta name="keywords" content="Android,Gradle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gradle 3.4 使用新依赖项配置.md">
+<meta property="og:url" content="http://montywu.me/2018/03/16/20180316153539/index.html">
 <meta property="og:site_name" content="Monty吴">
-<meta property="og:description" content="生活不止眼前苟且，还有诗和远方">
+<meta property="og:description" content="Gradle 3.4 引入了新的 Java 库插件配置，允许您控制到编译和运行时类路径的发布（适用于模块间依赖项）。 Android 插件 3.0.0 正在迁移到这些新依赖项配置。 要迁移您的项目，只需更新您的依赖项以使用新配置，而非已弃用配置，如下表中所列。     新配置 已弃用配置 行为     implementation compile 依赖项在编译时对模块可用，并且仅在运行时对模块的">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-16T07:44:26.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Monty吴">
-<meta name="twitter:description" content="生活不止眼前苟且，还有诗和远方">
+<meta name="twitter:title" content="Gradle 3.4 使用新依赖项配置.md">
+<meta name="twitter:description" content="Gradle 3.4 引入了新的 Java 库插件配置，允许您控制到编译和运行时类路径的发布（适用于模块间依赖项）。 Android 插件 3.0.0 正在迁移到这些新依赖项配置。 要迁移您的项目，只需更新您的依赖项以使用新配置，而非已弃用配置，如下表中所列。     新配置 已弃用配置 行为     implementation compile 依赖项在编译时对模块可用，并且仅在运行时对模块的">
 
 
 
@@ -128,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://montywu.me/categories/Android/"/>
+  <link rel="canonical" href="http://montywu.me/2018/03/16/20180316153539/"/>
 
 
 
 
 
-  <title>分类: Android | Monty吴</title>
+  <title>Gradle 3.4 使用新依赖项配置.md | Monty吴</title>
   
 
 
@@ -163,7 +165,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,111 +269,273 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>Android<small>分类</small>
-        </h2>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://montywu.me/2018/03/16/20180316153539/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Monty吴">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/user.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Monty吴">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/03/16/20180316153539/" itemprop="url">
-              
-                <span itemprop="name">Gradle 3.4 使用新依赖项配置.md</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">Gradle 3.4 使用新依赖项配置.md</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-16T15:35:39+08:00"
-              content="2018-03-16" >
-          03-16
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T15:35:39+08:00">
+                2018-03-16
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  479 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/08/20180308152026/" itemprop="url">
-              
-                <span itemprop="name">Android Studio 3.0开启Lambda表达式</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-08T15:20:26+08:00"
-              content="2018-03-08" >
-          03-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/03/07/20180307095829/" itemprop="url">
-              
-                <span itemprop="name">导航</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-07T09:58:29+08:00"
-              content="2018-03-07" >
-          03-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <blockquote>
+<p>Gradle 3.4 引入了新的 Java 库插件配置，允许您控制到编译和运行时类路径的发布（适用于模块间依赖项）。 Android 插件 3.0.0 正在迁移到这些新依赖项配置。 要迁移您的项目，只需更新您的依赖项以使用新配置，而非已弃用配置，如下表中所列。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>新配置</th>
+<th>已弃用配置</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>implementation</td>
+<td>compile</td>
+<td>依赖项在编译时对模块可用，并且仅在运行时对模块的消费者可用。 对于大型多项目构建，使用 implementation 而不是 api/compile 可以显著缩短构建时间，因为它可以减少构建系统需要重新编译的项目量。 大多数应用和测试模块都应使用此配置。</td>
+</tr>
+<tr>
+<td>api</td>
+<td>compile</td>
+<td>依赖项在编译时对模块可用，并且在编译时和运行时还对模块的消费者可用。 此配置的行为类似于 compile（现在已弃用），一般情况下，您应当仅在库模块中使用它。 应用模块应使用 implementation，除非您想要将其 API 公开给单独的测试模块。</td>
+</tr>
+<tr>
+<td>compileOnly</td>
+<td>provided</td>
+<td>依赖项仅在编译时对模块可用，并且在编译或运行时对其消费者不可用。 此配置的行为类似于 provided（现在已弃用）。</td>
+</tr>
+<tr>
+<td>runtimeOnly</td>
+<td>apk</td>
+<td>依赖项仅在运行时对模块及其消费者可用。 此配置的行为类似于 apk（现在已弃用）。</td>
+</tr>
+</tbody>
+</table>
+<p>就像当前稳定版本的 Android 插件一样，上面的配置对风味或构建类型特定的依赖项可用。 例如，您可以使用 api 让依赖项对所有变体可用，也可以使用 redApi 让其仅对模块的 red 变体可用。</p>
+<blockquote>
+<p>注：compile、provided 和 apk 目前仍然可用。 不过，它们将在下一个主要版本的 Android 插件中消失。</p>
+</blockquote>
+<blockquote>
+<p><a href="https://developer.android.com/studio/build/gradle-plugin-3-0-0-migration.html" target="_blank" rel="noopener">官方迁移指南</a></p>
+</blockquote>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Android/" rel="tag"><i class="fa fa-tag"></i> Android</a>
+          
+            <a href="/tags/Gradle/" rel="tag"><i class="fa fa-tag"></i> Gradle</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/14/20180314084537/" rel="next" title="谷歌Android P操作系统基本功能曝光">
+                <i class="fa fa-chevron-left"></i> 谷歌Android P操作系统基本功能曝光
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
 
 
           </div>
@@ -379,6 +543,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNDU2OC8xMTEwNg=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -676,6 +849,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -704,6 +881,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
