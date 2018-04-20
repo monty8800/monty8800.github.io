@@ -4,7 +4,22 @@
 
     
   <url>
-    <loc>http://montywu.me/2018/03/28/cjfae8kai0000q8xom985cp52/</loc>
+    <loc>http://montywu.me/2018/04/20/cjg7jx6nl000ob7xo145xumks/</loc>
+    <lastmod>2018-04-20T03:23:55.701Z</lastmod>
+    <data>
+        <display>
+        <title>RePlugin 插件之间共享组件方案</title>
+        <pubTime>2018-04-20T03:23:55.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://montywu.me/2018/03/28/cjg7jx6hy0001b7xodw4g4p8m/</loc>
     <lastmod>2018-03-28T01:10:16.387Z</lastmod>
     <data>
         <display>
@@ -31,9 +46,9 @@
         <title>Gradle 3.4 使用新依赖项配置</title>
         <pubTime>2018-03-16T07:35:39.000Z</pubTime>
         
-        <tag>Android</tag>
-         
         <tag>Gradle</tag>
+         
+        <tag>Android</tag>
          
          
            
