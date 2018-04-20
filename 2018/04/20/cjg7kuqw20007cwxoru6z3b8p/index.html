@@ -93,11 +93,11 @@
 <meta name="keywords" content="RePlugin,插件化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RePlugin 插件之间共享组件方案">
-<meta property="og:url" content="http://montywu.me/2018/04/20/cjg7koicz000798xouzlvtvqj/index.html">
+<meta property="og:url" content="http://montywu.me/2018/04/20/cjg7kuqw20007cwxoru6z3b8p/index.html">
 <meta property="og:site_name" content="Monty吴">
 <meta property="og:description" content="RePlugin —— 历经三年多考验，数亿设备使用的，稳定占坑类插件化方案 RePlugin是一套完整的、稳定的、适合全面使用的，占坑类插件化方案，由360手机卫士的RePlugin Team研发，也是业内首个提出”全面插件化“（全面特性、全面兼容、全面使用）的方案。其主要优势有：  极其灵活：主程序无需升级（无需在Manifest中预埋组件），即可支持新增的四大组件，甚至全新的插件 非常稳定">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-20T06:27:00.000Z">
+<meta property="og:updated_time" content="2018-04-20T06:31:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RePlugin 插件之间共享组件方案">
 <meta name="twitter:description" content="RePlugin —— 历经三年多考验，数亿设备使用的，稳定占坑类插件化方案 RePlugin是一套完整的、稳定的、适合全面使用的，占坑类插件化方案，由360手机卫士的RePlugin Team研发，也是业内首个提出”全面插件化“（全面特性、全面兼容、全面使用）的方案。其主要优势有：  极其灵活：主程序无需升级（无需在Manifest中预埋组件），即可支持新增的四大组件，甚至全新的插件 非常稳定">
@@ -130,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="http://montywu.me/2018/04/20/cjg7koicz000798xouzlvtvqj/"/>
+  <link rel="canonical" href="http://montywu.me/2018/04/20/cjg7kuqw20007cwxoru6z3b8p/"/>
 
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://montywu.me/2018/04/20/cjg7koicz000798xouzlvtvqj/">
+    <link itemprop="mainEntityOfPage" href="http://montywu.me/2018/04/20/cjg7kuqw20007cwxoru6z3b8p/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Monty吴">
@@ -440,7 +440,12 @@
 <p>但是当我在考虑加第二条需求 “插件之间需要共享组件，比如Fragment” 的时候，出问题了</p>
 <h5 id="尝试1-按照官方demo中反射插件中Fragment的方式，我封装了如下方法"><a href="#尝试1-按照官方demo中反射插件中Fragment的方式，我封装了如下方法" class="headerlink" title="尝试1: 按照官方demo中反射插件中Fragment的方式，我封装了如下方法"></a>尝试1: 按照官方demo中反射插件中Fragment的方式，我封装了如下方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Fragment <span class="title">fetchFragment</span><span class="params">(String pluginName, String fragmentClass)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (TextUtils.isEmpty(pluginName) || TextUtils.isEmpty(fragmentClass)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    RePlugin.registerHookingClass(fragmentClass, RePlugin.createComponentName(pluginName, fragmentClass), <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//代码使用插件Fragment</span></span><br><span class="line">    <span class="comment">//获取插件的ClassLoader</span></span><br><span class="line">    ClassLoader d1ClassLoader = RePlugin.fetchClassLoader(pluginName);</span><br><span class="line">    Fragment fragment = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//使用插件的Classloader获取指定Fragment实例</span></span><br><span class="line">        fragment = d1ClassLoader.loadClass(fragmentClass).asSubclass(Fragment.class).newInstance();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InstantiationException | IllegalAccessException | ClassNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fragment;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后，使用[RlPlugin.fetchFragment()]来打开Fragment<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Fragment receiveManagement = RlPlugin.fetchFragment(<span class="string">"ReceiveManagement"</span>, <span class="string">"com.rlzz.receivemanagement.BlankFragment"</span>);</span><br><span class="line">getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, receiveManagement).commit();</span><br></pre></td></tr></table></figure></p>
-<p>· 重新编译插件<br>· 将编译出来的apk放到宿主的assets-&gt;external文件夹中<br>· 运行宿主程序<br>· 打开插件Fragment，报错：Fragment cannot be cast to android.support.v4.app.Fragment</p>
+<ul>
+<li>重新编译插件</li>
+<li>将编译出来的apk放到宿主的assets-&gt;external文件夹中</li>
+<li>运行宿主程序</li>
+<li>打开插件Fragment，报错：Fragment cannot be cast to android.support.v4.app.Fragment</li>
+</ul>
 <p>出现错误，第一时间去看官方文档，发现有一段说明：</p>
 <blockquote>
 <p>Q：使用Fargemnt常见问题汇总？<br>错误1.“Fragment cannot be cast to android.support.v4.app.Fragment”问题（#378、#467）？<br>A：该类问题主要是由于Fragment继承自android.support.v4.app.Fragment，若直接继承android.app.Fragment不会有该类问题，两者的使用以及区别不再赘述。 插件内部出现该类问题，主要是由于在插件的dependencies中直接或间接引入v4包，包括引入第三方库时，其依赖关系导致最终引入与该第三方库版本相对应的v4包（尤其需要注意），以致插件与宿主host的都包含有v4包，最终导致宿主调用插件遇到类转化问题。<br>具体解决：<br>方式一：可以参照demo1。通过修改插件的build.gradle文件，以provided files(‘libs/fragment.jar’)方式，骗过编译期，并借助Gradle 的exclude语法来解决版本冲突，移除support-v4，即：<br>configurations { all*.exclude group: ‘com.android.support’, module: ‘support-v4’ }<br>方式二：也可以借助打包工具来处理，具体可参照：replugin-resolve-deps-conflict，同样可解决此类问题。@lijunjie<br>另外，如果存在通过provided方式引入的库，而在插件中第三方库存在依赖的问题，可参照解决<br>错误2.”Unable to instantiate fragment com.xx.TestFragment: make sure class name exists, is public, and has an empty constructor that is public”问题(#292)？<br>A：该问题最可能的原因是由于自定义Fragment类缺少无参的public构造函数，其次看看是否由于混淆导致类名找不到。 另外，不建议通过静态的方式添加fragment，即使用标签的方式。提倡通过动态方式添加fragment，即使用add的方式动态添加。<br>回答者：@SkyEric</p>
@@ -481,7 +486,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/28/cjg7koici000298xohsj2te01/" rel="next" title="Android开发资料整理">
+              <a href="/2018/03/28/cjg7kuqvf0002cwxoovx3dz74/" rel="next" title="Android开发资料整理">
                 <i class="fa fa-chevron-left"></i> Android开发资料整理
               </a>
             
