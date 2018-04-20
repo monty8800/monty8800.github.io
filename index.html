@@ -282,7 +282,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://montywu.me/2018/04/20/cjg7jx6nl000ob7xo145xumks/">
+    <link itemprop="mainEntityOfPage" href="http://montywu.me/2018/04/20/cjg7koicz000798xouzlvtvqj/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Monty吴">
@@ -301,7 +301,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/20/cjg7jx6nl000ob7xo145xumks/" itemprop="url">RePlugin 插件之间共享组件方案</a></h2>
+                <a class="post-title-link" href="/2018/04/20/cjg7koicz000798xouzlvtvqj/" itemprop="url">RePlugin 插件之间共享组件方案</a></h2>
         
 
         <div class="post-meta">
@@ -324,6 +324,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -345,7 +367,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0 字
+                  1,170 字
                 </span>
               
 
@@ -361,7 +383,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  5 分钟
                 </span>
               
             </div>
@@ -384,7 +406,48 @@
       
         
           
-            
+            <!--<p align="center">
+  <a href="https://github.com/Qihoo360/RePlugin/wiki">
+    <img alt="RePlugin Logo" src="https://github.com/Qihoo360/RePlugin/wiki/img/RePlugin.png" width="400"/>
+  </a>
+</p>
+-->
+<h2 id="RePlugin-——-历经三年多考验，数亿设备使用的，稳定占坑类插件化方案"><a href="#RePlugin-——-历经三年多考验，数亿设备使用的，稳定占坑类插件化方案" class="headerlink" title="RePlugin —— 历经三年多考验，数亿设备使用的，稳定占坑类插件化方案"></a><a href="https://github.com/Qihoo360/RePlugin" target="_blank" rel="noopener">RePlugin</a> —— 历经三年多考验，数亿设备使用的，稳定占坑类插件化方案</h2><blockquote>
+<p>RePlugin是一套完整的、稳定的、适合全面使用的，占坑类插件化方案，由360手机卫士的RePlugin Team研发，也是业内首个提出”全面插件化“（全面特性、全面兼容、全面使用）的方案。<br>其主要优势有：</p>
+<ul>
+<li><strong>极其灵活</strong>：主程序无需升级（无需在Manifest中预埋组件），即可支持新增的四大组件，甚至全新的插件</li>
+<li><strong>非常稳定</strong>：Hook点<strong>仅有一处（ClassLoader），无任何Binder Hook</strong>！如此可做到其<strong>崩溃率仅为“万分之一”，并完美兼容市面上近乎所有的Android ROM</strong></li>
+<li><strong>特性丰富</strong>：支持近乎所有在“单品”开发时的特性。<strong>包括静态Receiver、Task-Affinity坑位、自定义Theme、进程坑位、AppCompat、DataBinding等</strong></li>
+<li><strong>易于集成</strong>：无论插件还是主程序，<strong>只需“数行”就能完成接入</strong></li>
+<li><strong>管理成熟</strong>：拥有成熟稳定的“插件管理方案”，支持插件安装、升级、卸载、版本管理，甚至包括进程通讯、协议版本、安全校验等</li>
+<li><strong>数亿支撑</strong>：有360手机卫士庞大的<strong>数亿</strong>用户做支撑，<strong>三年多的残酷验证</strong>，确保App用到的方案是最稳定、最适合使用的</li>
+</ul>
+</blockquote>
+<p>以上是RePlugin的基本介绍，了解更多详细<a href="https://github.com/Qihoo360/RePlugin" target="_blank" rel="noopener">中文文档</a></p>
+<h3 id="我的需求"><a href="#我的需求" class="headerlink" title="我的需求"></a>我的需求</h3><ol>
+<li>多个插件之间需要使用到统一的Base Libaray中的BaseActivity</li>
+<li>插件之间需要共享组件，比如Fragment</li>
+</ol>
+<h3 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h3><h4 id="多个插件之间需要使用到统一的Base-Libaray中的BaseActivity"><a href="#多个插件之间需要使用到统一的Base-Libaray中的BaseActivity" class="headerlink" title="多个插件之间需要使用到统一的Base Libaray中的BaseActivity"></a>多个插件之间需要使用到统一的Base Libaray中的BaseActivity</h4><p>达到这个目的不难，只需2步实现，</p>
+<ol>
+<li>建立library工程，在library中创建BaseActivity，并继承AppCompatActivity</li>
+<li>插件Module compile library</li>
+<li>插件中的Activity继承BaseActivity</li>
+</ol>
+<p>运行～打包，ok，没问题，非常完美</p>
+<p>但是当我在考虑加第二条需求 “插件之间需要共享组件，比如Fragment” 的时候，出问题了</p>
+<h5 id="尝试1-按照官方demo中反射插件中Fragment的方式，我封装了如下方法"><a href="#尝试1-按照官方demo中反射插件中Fragment的方式，我封装了如下方法" class="headerlink" title="尝试1: 按照官方demo中反射插件中Fragment的方式，我封装了如下方法"></a>尝试1: 按照官方demo中反射插件中Fragment的方式，我封装了如下方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Fragment <span class="title">fetchFragment</span><span class="params">(String pluginName, String fragmentClass)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (TextUtils.isEmpty(pluginName) || TextUtils.isEmpty(fragmentClass)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    RePlugin.registerHookingClass(fragmentClass, RePlugin.createComponentName(pluginName, fragmentClass), <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//代码使用插件Fragment</span></span><br><span class="line">    <span class="comment">//获取插件的ClassLoader</span></span><br><span class="line">    ClassLoader d1ClassLoader = RePlugin.fetchClassLoader(pluginName);</span><br><span class="line">    Fragment fragment = <span class="keyword">null</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">//使用插件的Classloader获取指定Fragment实例</span></span><br><span class="line">        fragment = d1ClassLoader.loadClass(fragmentClass).asSubclass(Fragment.class).newInstance();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InstantiationException | IllegalAccessException | ClassNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fragment;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，使用[RlPlugin.fetchFragment()]来打开Fragment<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Fragment receiveManagement = RlPlugin.fetchFragment(<span class="string">"ReceiveManagement"</span>, <span class="string">"com.rlzz.receivemanagement.BlankFragment"</span>);</span><br><span class="line">getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, receiveManagement).commit();</span><br></pre></td></tr></table></figure></p>
+<p>· 重新编译插件<br>· 将编译出来的apk放到宿主的assets-&gt;external文件夹中<br>· 运行宿主程序<br>· 打开插件Fragment，报错：Fragment cannot be cast to android.support.v4.app.Fragment</p>
+<p>出现错误，第一时间去看官方文档，发现有一段说明：</p>
+<blockquote>
+<p>Q：使用Fargemnt常见问题汇总？<br>错误1.“Fragment cannot be cast to android.support.v4.app.Fragment”问题（#378、#467）？<br>A：该类问题主要是由于Fragment继承自android.support.v4.app.Fragment，若直接继承android.app.Fragment不会有该类问题，两者的使用以及区别不再赘述。 插件内部出现该类问题，主要是由于在插件的dependencies中直接或间接引入v4包，包括引入第三方库时，其依赖关系导致最终引入与该第三方库版本相对应的v4包（尤其需要注意），以致插件与宿主host的都包含有v4包，最终导致宿主调用插件遇到类转化问题。<br>具体解决：<br>方式一：可以参照demo1。通过修改插件的build.gradle文件，以provided files(‘libs/fragment.jar’)方式，骗过编译期，并借助Gradle 的exclude语法来解决版本冲突，移除support-v4，即：<br>configurations { all*.exclude group: ‘com.android.support’, module: ‘support-v4’ }<br>方式二：也可以借助打包工具来处理，具体可参照：replugin-resolve-deps-conflict，同样可解决此类问题。@lijunjie<br>另外，如果存在通过provided方式引入的库，而在插件中第三方库存在依赖的问题，可参照解决<br>错误2.”Unable to instantiate fragment com.xx.TestFragment: make sure class name exists, is public, and has an empty constructor that is public”问题(#292)？<br>A：该问题最可能的原因是由于自定义Fragment类缺少无参的public构造函数，其次看看是否由于混淆导致类名找不到。 另外，不建议通过静态的方式添加fragment，即使用标签的方式。提倡通过动态方式添加fragment，即使用add的方式动态添加。<br>回答者：@SkyEric</p>
+</blockquote>
+<p>按照官方的说明，也算是给了解决方案，那么下面开始照着做：</p>
+<ol>
+<li></li>
+</ol>
+
           
         
       
@@ -432,7 +495,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://montywu.me/2018/03/28/cjg7jx6hy0001b7xodw4g4p8m/">
+    <link itemprop="mainEntityOfPage" href="http://montywu.me/2018/03/28/cjg7koici000298xohsj2te01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Monty吴">
@@ -451,7 +514,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/28/cjg7jx6hy0001b7xodw4g4p8m/" itemprop="url">Android开发资料整理</a></h2>
+                <a class="post-title-link" href="/2018/03/28/cjg7koici000298xohsj2te01/" itemprop="url">Android开发资料整理</a></h2>
         
 
         <div class="post-meta">
@@ -570,7 +633,7 @@
 <p>感谢 <a href="http://weibo.com/GitHubDaily" target="_blank" rel="noopener">@GitHubDaily</a> 与 <a href="http://weibo.com/AndroidDevDaily" target="_blank" rel="noopener">@Android 开发日常</a> 的大力支持<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/28/cjg7jx6hy0001b7xodw4g4p8m/#more" rel="contents">
+            <a class="btn" href="/2018/03/28/cjg7koici000298xohsj2te01/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2047,7 +2110,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2134,7 +2197,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.1k</span>
+    <span title="Site words total count">12.3k</span>
   
 </div>
 
